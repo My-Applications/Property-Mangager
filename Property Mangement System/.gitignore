@@ -1,0 +1,35 @@
+#Eclipse metadata
+.project
+.settings
+.DS_Store
+.metadata
+
+#Build results
+api/target
+service/target
+integration-tests/target
+model/target
+target
+bin/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/

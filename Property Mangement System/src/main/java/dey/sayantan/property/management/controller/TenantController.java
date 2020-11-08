@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dey.sayantan.property.management.core.LoginDTO;
+import dey.sayantan.property.management.exceptions.PayloadDecodeException;
 import dey.sayantan.property.management.model.Tenant;
 import dey.sayantan.property.management.service.TenantService;
 import dey.sayantan.property.management.validator.CommonValidatorUtil;
@@ -41,32 +42,20 @@ public class TenantController {
 	@PostMapping("/CreateTenant")
 	public Tenant createTenant(HttpServletRequest requestPayload, HttpServletResponse response) throws Exception {
 		Tenant tenant = new Tenant();
-		try {
 			String request = CommonValidatorUtil.parsePayloadFromRequest(requestPayload);
 			tenant = objectMapper.readValue(request, Tenant.class);
 			tenantService.addTenant(tenant);
 			return tenant;
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-			throw new Exception(e.getMessage());
-		}
-
 	}
 
 	@RequestMapping("/LoginTenant")
 	public Tenant loginTenant(HttpServletRequest requestPayload, HttpServletResponse response) throws Exception {
 		Tenant tenant = new Tenant();
-		try {
 			String request = CommonValidatorUtil.parsePayloadFromRequest(requestPayload);
 			LoginDTO loginDetails = objectMapper.readValue(request, LoginDTO.class);
 			tenant = tenantService.verifyTenantCreds(loginDetails);
 			// TODO generate bearer token
 			return tenant;
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-			throw new Exception(e.getMessage());
-		}
-
 	}
 
 	@PutMapping("/UpdateTenant")
@@ -79,7 +68,7 @@ public class TenantController {
 
 		} catch (IOException e) {
 			logger.error("Error Deserializing Payload To Object " + e.getMessage());
-			throw new Exception("Error Deserializing Payload To Object ");
+			throw new PayloadDecodeException("Error Deserializing Payload To Object ");
 		}
 		return tenant;
 	}

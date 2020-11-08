@@ -1,4 +1,7 @@
-# Society Manager
+
+![logo](Media/Logo.png)
+
+# Property Manager
 
 ## Contents
 
@@ -17,10 +20,10 @@
        3. [View All Payments](#view-all-payments)
        4. [View All Payments For A Tenant](#view-payments-for-a-tenant)
    3. [Complain](#complain)
-   	   1. [Create Complain](#create-complain)
-   	   2. [Update Complain](#update-complain)
-      3. [View All Complains](#view-all-complains)
-      4. [View All Complains For A Tenant](#view-complains-for-a-tenant)
+      1. [Create Complain](#create-complain)
+         2. [Update Complain](#update-complain)
+      2. [View All Complains](#view-all-complains)
+      3. [View All Complains For A Tenant](#view-complains-for-a-tenant)
    4. [Feedback](#feedback)
       1. [Create Feedback](#create-feedback)
       2. [Update Complain](#update-complain)
@@ -29,6 +32,10 @@
 4. [Notes](#note)
 
 ## Introduction
+
+A demo backend application for management of properties like Land, Estates, Rooms and take actions taken on them like giving on lease , sell them or rent them. The payments also can be Noted ( The payment gateway and relevant transaction infrastructure are underway).
+
+
 
 ## Basic Setup
 
@@ -41,7 +48,7 @@ Database : PostGres . Configured to run on docker inside a container. Pull the
 		   
 **Base Path :**
 
-         -Localhost : Port 9090
+         -{{server}} : Port {{port}}
          -CloudFoundry: https://societymanager.cfapps.us30.hana.ondemand.com/
 
 
@@ -64,7 +71,7 @@ or purchase it altogether.
 ### Create Tenant
 Create A Tenant Using a Unique Registration / User Id
 
-**URL:** http://localhost:9090/CreateTenant
+**URL:** http://{{server}}:{{port}}/CreateTenant
 
 **Method:** POST
 
@@ -87,7 +94,7 @@ Create A Tenant Using a Unique Registration / User Id
 ### Update Tenant
 Update A Tenant Using a Unique Registration / User Id
 
-**URL:** http://localhost:9090/UpdateTenant
+**URL:** http://{{server}}:{{port}}/UpdateTenant
 
 **Method:** PUT
 
@@ -111,7 +118,7 @@ Update A Tenant Using a Unique Registration / User Id
 ### Delete Tenant
 Create A Tenant Using a UUID
 
-**URL:** http://localhost:9090/DeleteTenant
+**URL:** http://{{server}}:{{port}}/DeleteTenant
 
 **Method:** DELETE
 
@@ -129,7 +136,7 @@ Create A Tenant Using a UUID
 
 View Details Of a Specific Tenant Using Registration Id
 
-**URL:** http://localhost:9090/TenantViews/{{tenantId}}
+**URL:** http://{{server}}:{{port}}/TenantViews/{{tenantId}}
 
 **Method:** GET
 
@@ -139,7 +146,7 @@ View Details Of a Specific Tenant Using Registration Id
 ### View All Tenants
 View List OF All Tenant
 
-**URL:** http://localhost:9090/TenantViewsAll
+**URL:** http://{{server}}:{{port}}/TenantViewsAll
 
 **Method:** GET
 
@@ -149,7 +156,7 @@ Payment created for each type of property occupancy (will be updated soon).
 ### Create Payment
 Create A Payment Using Tenant UUID
 
-**URL:** http://localhost:9090/CreatePayment
+**URL:** http://{{server}}:{{port}}/CreatePayment
 
 **Method:** POST
 
@@ -169,7 +176,7 @@ Save the uuid received in response as Payment Uuid.
 ### Update Payment
 Update a Specific Payment Detail created for a Tenant
 
-**URL:** http://localhost:9090/UpdatePayment
+**URL:** http://{{server}}:{{port}}/UpdatePayment
 
 **Method:** POST
 
@@ -190,14 +197,14 @@ Update a Specific Payment Detail created for a Tenant
 ### View All Payments
 List out all the payments for all tenants
 
-**URL:** http://localhost:9090/PaymentViewsAll
+**URL:** http://{{server}}:{{port}}/PaymentViewsAll
 
 **Method:** GET
 
 ### View Payments For A Tenant
 List out all the payments for a specific tenant
 
-**URL:** http://localhost:9090/PaymentViews/{{tenantUuid}}
+**URL:** http://{{server}}:{{port}}/PaymentViews/{{tenantUuid}}
 
 **Method:** GET
 
@@ -206,7 +213,7 @@ List out all the payments for a specific tenant
 ### Create Complain
 Create A Complain Using Tenant UUID
 
-**URL:** http://localhost:9090/CreateComplain
+**URL:** http://{{server}}:{{port}}/CreateComplain
 
 **Method:** POST
 
@@ -227,7 +234,7 @@ in response uuid returned is the complainUuid.
 ### Update Complain
 Update A Complain Using previous Complain UUID
 
-**URL:** http://localhost:9090/UpdateComplain
+**URL:** http://{{server}}:{{port}}/UpdateComplain
 
 **Method:** POST
 
@@ -235,7 +242,7 @@ Update A Complain Using previous Complain UUID
 
 ```
 {
-	"complainUuid" : "2b675f16-7712-4800-b8c1-5c8a541ff7b4",
+    "complainUuid" : "2b675f16-7712-4800-b8c1-5c8a541ff7b4",
     "tenantUuid" : "{{tenantUuid}}",
     "complainType" : "Housekeeping",
     "priority" : "Medium",
@@ -248,21 +255,21 @@ Update A Complain Using previous Complain UUID
 ### View All Complains
 List out all the complains for all tenants
 
-**URL:** http://localhost:9090/ComplainViewsAll
+**URL:** http://{{server}}:{{port}}/ComplainViewsAll
 
 **Method:** GET
 
 ### View Complains For A Tenant
 List out all the payments for a specific tenant
 
-**URL:** http://localhost:9090/ComplainViews/{{tenantUuid}}
+**URL:** http://{{server}}:{{port}}/ComplainViews/{{tenantUuid}}
 
 ## Feedback
 
 ### Create Feedback
 Create A Feedback Using Tenant UUID
 
-**URL:** http://localhost:9090/CreateFeedback
+**URL:** http://{{server}}:{{port}}/CreateFeedback
 
 **Method:** POST
 
@@ -284,7 +291,7 @@ in response uuid returned is the feedbackUuid.
 ### Update Feedback
 Update A Feedback Using previous Feedback UUID
 
-**URL:** http://localhost:9090/UpdateFeedback
+**URL:** http://{{server}}:{{port}}/UpdateFeedback
 
 **Method:** POST
 
@@ -305,14 +312,14 @@ Update A Feedback Using previous Feedback UUID
 ### View All Feedbacks
 List out all the feedbacks for all tenants
 
-**URL:** http://localhost:9090/FeedbackViewsAll
+**URL:** http://{{server}}:{{port}}/FeedbackViewsAll
 
 **Method:** GET
 
 ### View Feedbacks For A Tenant
 List out all the payments for a specific tenant
 
-**URL:** http://localhost:9090/FeedbackViews/{{tenantUuid}}
+**URL:** http://{{server}}:{{port}}/FeedbackViews/{{tenantUuid}}
 
 
 ## Note

@@ -2,11 +2,11 @@ package dey.sayantan.property.management.exceptions;
 
 import org.springframework.http.HttpStatus;
 
-public class PayloadDecodeException extends BaseRuntimeException {
+public class BaseRuntimeException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
-    private HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
-    
+	private HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+
 	public HttpStatus getHttpStatus() {
 		return httpStatus;
 	}
@@ -15,26 +15,26 @@ public class PayloadDecodeException extends BaseRuntimeException {
 		this.httpStatus = httpStatus;
 	}
 
-	public PayloadDecodeException() {
+	public BaseRuntimeException() {
 
 	}
 
-	public PayloadDecodeException(String message, Throwable cause, boolean enableSuppression,
+	public BaseRuntimeException(String message, Throwable cause, boolean enableSuppression,
 			boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
-	public PayloadDecodeException(String message, Throwable cause) {
+	public BaseRuntimeException(String message, Throwable cause) {
 		super(message, cause);
 
 	}
 
-	public PayloadDecodeException(String message) {
+	public BaseRuntimeException(String message) {
 		super(message);
 
 	}
 
-	public PayloadDecodeException(Throwable cause) {
+	public BaseRuntimeException(Throwable cause) {
 		super(cause);
 
 	}

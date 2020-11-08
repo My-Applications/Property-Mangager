@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import dey.sayantan.property.management.core.LoginDTO;
+import dey.sayantan.property.management.exceptions.DuplicateResourceException;
 import dey.sayantan.property.management.model.Tenant;
 import dey.sayantan.property.management.repositry.TenantRepository;
 import dey.sayantan.property.management.validator.TenantValidator;
@@ -84,7 +85,7 @@ public class TenantService {
 	private void verifyTenant(Tenant tenant) throws Exception {
 		if (tenantRepository.findByRegistrationId(tenant.getRegistrationId()) != null) {
 			logger.error("Tenant With Registration Id " + tenant.getRegistrationId() + " already exists");
-			throw new Exception("Tenant With Similar Registration Id Already Exists");
+			throw new DuplicateResourceException("Tenant With Similar Registration Id Already Exists");
 		}
 
 	}

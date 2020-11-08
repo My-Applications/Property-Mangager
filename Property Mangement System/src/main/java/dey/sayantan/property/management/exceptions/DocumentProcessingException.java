@@ -2,7 +2,7 @@ package dey.sayantan.property.management.exceptions;
 
 import org.springframework.http.HttpStatus;
 
-public class DocumentProcessingException extends RuntimeException {
+public class DocumentProcessingException extends BaseRuntimeException {
 
 	private static final long serialVersionUID = 1L;
 	private HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;

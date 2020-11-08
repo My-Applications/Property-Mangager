@@ -1,6 +1,5 @@
-```
-![Property Manager logo](Files/Logo.png)
-```
+
+![logo](Files/Logo.png)
 
 # Property Manager
 

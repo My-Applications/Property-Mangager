@@ -1,6 +1,10 @@
 
 ![logo](Media/Logo.png)
 
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=My-Applications_Property-Mangager&metric=bugs)](https://sonarcloud.io/dashboard?id=My-Applications_Property-Mangager)                                                                                                                                                                       [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=My-Applications_Property-Mangager&metric=code_smells)](https://sonarcloud.io/dashboard?id=My-Applications_Property-Mangager)  																		    [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=My-Applications_Property-Mangager&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=My-Applications_Property-Mangager)  												         [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=My-Applications_Property-Mangager&metric=security_rating)](https://sonarcloud.io/dashboard?id=My-Applications_Property-Mangager) 																		       [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=My-Applications_Property-Mangager&metric=sqale_index)](https://sonarcloud.io/dashboard?id=My-Applications_Property-Mangager)																          		 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=My-Applications_Property-Mangager&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=My-Applications_Property-Mangager)
+
+
+
 # Property Manager
 
 ## Contents

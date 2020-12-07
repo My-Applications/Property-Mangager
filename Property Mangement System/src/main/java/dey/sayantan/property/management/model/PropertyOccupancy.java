@@ -34,8 +34,7 @@ public class PropertyOccupancy extends EntityRoot {
 	@Column(nullable = false)
 	private String description;
 
-	@OneToMany(mappedBy = "propertyOccupancy", cascade = { CascadeType.PERSIST,
-			CascadeType.REMOVE }, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "propertyOccupancy", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<OccupancyDetails> occupancyDetailsList;
 
 	public PropertyOccupancy() {

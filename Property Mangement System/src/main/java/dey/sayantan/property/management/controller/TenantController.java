@@ -48,7 +48,7 @@ public class TenantController {
 			return tenant;
 	}
 
-	@RequestMapping("/LoginTenant")
+	@PostMapping("/LoginTenant")
 	public Tenant loginTenant(HttpServletRequest requestPayload, HttpServletResponse response) throws Exception {
 		Tenant tenant = new Tenant();
 			String request = CommonValidatorUtil.parsePayloadFromRequest(requestPayload);

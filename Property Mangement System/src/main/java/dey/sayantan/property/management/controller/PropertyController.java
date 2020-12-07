@@ -44,8 +44,7 @@ public class PropertyController {
 			propertyRepo.addProperty(property);
 			return property;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		return property;
 	}
@@ -62,8 +61,7 @@ public class PropertyController {
 			return property;
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		return property;
 	}

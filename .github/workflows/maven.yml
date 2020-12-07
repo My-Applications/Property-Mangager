@@ -4,8 +4,6 @@
 name: CI with Sonar , Maven
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 

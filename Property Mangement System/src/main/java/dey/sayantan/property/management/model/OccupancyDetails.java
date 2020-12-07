@@ -8,17 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Table;
 
 import dey.sayantan.property.management.core.EntityRoot;
 
-@Entity(name = "property_occupancy_details")
+@Entity(name = "occupancy_details")
+@Table(name = "occupancy_details")
 public class OccupancyDetails extends EntityRoot {
 
-	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "parent_row_id", referencedColumnName = "rowId")
+	@JoinColumn(name = "property_occupancy_id", referencedColumnName = "rowId")
 	private PropertyOccupancy propertyOccupancy;
 
 	@Column(nullable = false)
@@ -27,7 +26,7 @@ public class OccupancyDetails extends EntityRoot {
 	@Column(nullable = false)
 	private LocalDate endDate;
 
-	@Column(nullable = false)
+	@Column
 	private String description;
 
 	@Column(name = "uuid", length = 36, nullable = false, updatable = false)

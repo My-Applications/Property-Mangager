@@ -1,14 +1,13 @@
-package dey.sayantan.property.management.test;
+package dey.sayantan.property.management;
 
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -27,6 +26,7 @@ public class PDFCreatorTest {
 	PDFCreator pdfCreator = new PDFCreator();
 
 	@Test
+	@Ignore
 	public void getTenantSpecificPayslip_whenMultiplePayslipsPresent() {
 		Tenant mockedTenant = getMockedTenant();
 		List<Payment> mockedpayments = getMockedPayments();

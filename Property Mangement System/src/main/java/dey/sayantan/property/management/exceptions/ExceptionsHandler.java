@@ -20,7 +20,7 @@ public class ExceptionsHandler {
 	@ExceptionHandler({ DocumentProcessingException.class, PayloadDecodeException.class })
 	public ResponseEntity<JsonNode> runtimeExceptionHandler(BaseRuntimeException exception,
 			HttpServletRequest request) {
-		exception.getClass().cast(exception);
+//		exception.getClass().cast(exception);
 		JsonNode errorResponse = createErrorResponse(exception, request);
 		return ResponseEntity.status(exception.getHttpStatus()).body(errorResponse);
 	}

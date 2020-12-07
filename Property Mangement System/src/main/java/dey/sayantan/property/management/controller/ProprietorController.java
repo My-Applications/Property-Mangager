@@ -78,7 +78,7 @@ public class ProprietorController {
 	}
 
 	//TODO
-	@RequestMapping("/LoginOwner")
+	@PostMapping("/LoginOwner")
 	public Proprietor loginProprietor(HttpServletRequest requestPayload, HttpServletResponse response)
 			throws Exception {
 		Proprietor proprietor = new Proprietor();

@@ -52,8 +52,8 @@ public class PropertyOccupancyController {
 			propertyOccupancyService.addPropertyOccupancy(propertyOccupancy);
 			return propertyOccupancy;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			System.out.println(e.getMessage());
 		}
 		return propertyOccupancy;
 	}
@@ -73,8 +73,7 @@ public class PropertyOccupancyController {
 			return propertyOccupancy;
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		return propertyOccupancy;
 	}
@@ -103,7 +102,7 @@ public class PropertyOccupancyController {
 			tenantUuid = tenantService.getByRegistrationId(id).getUuid();
 		} catch (Exception e) {
 			logger.error("Error Getting Tenant UUID for the Registartion Id : " + e.getLocalizedMessage());
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			throw new Exception("Error Finding Tenant Details For the Provided Registration Number");
 		}
 		return propertyOccupancyService.findByUuid(tenantUuid);

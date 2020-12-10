@@ -93,7 +93,7 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy</artifactId>
-			<version>3.0.2</version><!--$NO-MVN-MAN-VER$ -->   <!-- java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.vmplugin.v7.Java7 -->
+			<version>3.0.7</version><!--$NO-MVN-MAN-VER$ -->   <!-- java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.vmplugin.v7.Java7 -->
 		</dependency>
 		<dependency>
 			<groupId>io.rest-assured</groupId>
